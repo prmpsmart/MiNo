@@ -1,0 +1,21 @@
+{
+    "incomes": [
+      {
+        "id": 1,
+        "title": "Sample Income 1",
+        "amount": 1000,
+        "date": "2023-09-28",
+        "category": "salary",
+        "description": "Sample description 1"
+      },
+      {
+        "id": 2,
+        "title": "Sample Income 2",
+        "amount": 1500,
+        "date": "2023-09-29",
+        "category": "investments",
+        "description": "Sample description 2"
+      }
+    ]
+  }
+  

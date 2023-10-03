@@ -10,7 +10,7 @@ export const menuItems = [
         id: 1,
         title: 'Dashboard',
         icon: dashboard,
-        link: '/dashboard',
+        link: '/',
 
     },
 
@@ -18,7 +18,7 @@ export const menuItems = [
         id: 2,
         title: 'Expenses',
         icon: expenses,
-        link: '/dashboard',
+        link: '/expenses',
 
     },
 
@@ -26,7 +26,7 @@ export const menuItems = [
         id: 3,
         title: 'Income',
         icon: income,
-        link: '/dashboard',
+        link: '/income',
 
     },
 
@@ -34,7 +34,7 @@ export const menuItems = [
         id: 4,
         title: 'Settings',
         icon: settings,
-        link: '/dashboard',
+        link: '/settings',
 
     }
 

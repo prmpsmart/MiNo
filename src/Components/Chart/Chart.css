@@ -1,0 +1,7 @@
+.ChartStyle{
+    background: green;
+    border: 2px solid white;
+    padding: 1rem;
+    border-radius: 20px;
+    height: 100%;
+}
