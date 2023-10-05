@@ -17,8 +17,8 @@ useEffect(() => {
 }, [])
 
 return{
-    width: size[0];
-    height: size[1];
+    width: size[0],
+    height: size[1],
 }
  }
 
