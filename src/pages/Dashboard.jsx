@@ -1,6 +1,8 @@
+import { getIncomes } from "../Backend/functions/sort_incomes";
 import Table from "../components/Table";
 
-const Dashboard = () => {
+const Dashboard = ({email, accountId}) => {
+    const incomes = getIncomes(email, accountId)
     return ( 
         <section>
             <div className="py-8 flex justify-between items-center">

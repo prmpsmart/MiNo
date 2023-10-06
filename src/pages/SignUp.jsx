@@ -11,10 +11,8 @@ export default function SignUp() {
   const history = useHistory();
 
   const handleSubmit = async (e) => {
-    history.push("/dashboard");
-    return;
-    // prmp
     e.preventDefault();
+    
     const emailInput = document.getElementById("email");
     const passowrdInput = document.getElementById("password");
     if (emailInput.value === "") {

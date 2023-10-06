@@ -30,7 +30,7 @@ function App() {
           </Route>
           <div className="content ml-[25%] px-4">
             <Route path="/dashboard">
-              <Dashboard />
+              <Dashboard email={email} accountId={accountId}/>
             </Route>
             <Route path="/income">
               <Income email={email} accountId={accountId} />
