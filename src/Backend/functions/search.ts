@@ -12,21 +12,23 @@ export async function searchIncomes(
       (income) =>
         income.name.includes(searchString) ||
         income.category.includes(searchString) ||
+        income.description.includes(searchString) ||
         income.amount.toString().includes(searchString)
-    );
-  }
+        );
+      }
 }
 export async function searchExpenses(
   email: string = "",
   account_id: string = "",
   searchString: string
-) {
-  const expenses = await getExpenses(email, account_id);
-  if (expenses != null) {
-    expenses.filter(
-      (expense) =>
+  ) {
+    const expenses = await getExpenses(email, account_id);
+    if (expenses != null) {
+      expenses.filter(
+        (expense) =>
         expense.name.includes(searchString) ||
         expense.category.includes(searchString) ||
+        expense.description.includes(searchString) ||
         expense.amount.toString().includes(searchString)
     );
   }

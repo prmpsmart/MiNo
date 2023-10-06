@@ -6,7 +6,18 @@ import {
   defaultIncomesCategories,
 } from "../utils/constants";
 
+class Status {
+  message: string = "";
+  isError:boolean=false;
+
+  constructor(msg: string, err:boolean) {
+    this.message = msg;
+    this.isError = err;
+  }
+}
+
 export async function getAccount(email: string) {
+  console.log('here')
   const account = await AccountModel.findOne({ email: email });
   if (account != null) {
     return account;
@@ -19,7 +30,7 @@ export async function createAccount(
 ) {
   let account = await getAccount(email);
   if (account != null) {
-    console.log(`Account with email: "${email}" already exist`);
+    return new Status(`Account with email: "${email}" already exist`, true);
   } else {
     account = await AccountModel.insertOne({
       name: name,
@@ -34,7 +45,7 @@ export async function createAccount(
       account_id: account.id,
       categories: defaultExpensesCategories,
     });
-    console.log("Account created successfully");
+    return  new Status("Account created successfully", false);
   }
 }
 
