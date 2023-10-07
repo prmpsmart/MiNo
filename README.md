@@ -2,6 +2,7 @@
 
 This is a simple Expense Tracker web app built using the [**Nobox**](nobox.cloud) BaaS service.
 ![nobox](./images/nobox.png)
+View live on [MiNo](https://mino-uxh5oez2.b4a.run/)
 
 **Why use a BaaS service?**
 
