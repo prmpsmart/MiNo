@@ -1,27 +1,41 @@
-# React + TypeScript + Vite
+## MiNo - Expense Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple Expense Tracker web app built using the [**Nobox**](nobox.cloud) BaaS service.
+![nobox](./images/nobox.png)
 
-Currently, two official plugins are available:
+**Why use a BaaS service?**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+BaaS services provide a number of benefits for web app developers, including:
 
-## Expanding the ESLint configuration
+* Reduced development time and costs: BaaS services provide a pre-built infrastructure and set of features, which can save you a lot of time and money on development.
+* Scalability: BaaS services are typically designed to be scalable, so they can handle increases in traffic and usage without any problems.
+* Security: BaaS providers typically have a strong track record of security, so you can be confident that your data is safe.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+**Why use an expense tracker?**
 
-- Configure the top-level `parserOptions` property like this:
+An expense tracker can help you to:
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+* Track your spending and identify areas where you can cut back.
+* Budget for future expenses.
+* Save money for your goals.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+**How to use this expense tracker**
+
+To use this expense tracker, simply create an account and start adding your expenses. You can add expenses by category, date, and amount. You can also view your expenses in a variety of reports.
+
+## Images
+### Sign In
+![signin](./images/signin.png)
+
+### Sign Up
+![signup](./images/signup.png)
+
+### Dashboard
+![dashboard](./images/dashboard.png)
+
+### Incomes
+![incomes](./images/incomes.png)
+
+
+### Expenses
+![expenses](./images/expenses.png)

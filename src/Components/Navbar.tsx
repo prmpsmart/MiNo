@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 
 type Props = {
   setAccountId: (val: string) => void;
-  name:string;
-  email:string;
+  name: string;
+  email: string;
 };
 
-const Navbar: React.FC<Props> = ({name, email, setAccountId}) => {
+const Navbar: React.FC<Props> = ({ name, email, setAccountId }) => {
   const [activeTab, setActiveTab] = useState("dashboard");
   return (
     <aside className="fixed left-0 top-0 h-full py-4 w-1/6 bg-white pr-6">
@@ -66,6 +66,15 @@ const Navbar: React.FC<Props> = ({name, email, setAccountId}) => {
       >
         <div className="absolute bottom-0 left-0 w-full p-4 font-semibold">
           Log Out
+          <p className="mt-3 text-sm text-gray-500">
+            View Source on
+            <a
+              href="https://github.com/prmpsmart/MiNo"
+              className="font-semibold leading-6 text-blue-600 hover:text-blue-500 px-2"
+            >
+              GitHub - MiNo
+            </a>
+          </p>
         </div>
       </Link>
     </aside>

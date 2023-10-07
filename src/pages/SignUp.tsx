@@ -50,7 +50,7 @@ export default function SignUp() {
           </h1>
         </div>
 
-        <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+        <div className="mt-3 sm:mx-auto sm:w-full sm:max-w-sm">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <label
@@ -138,13 +138,22 @@ export default function SignUp() {
                 Sign Up
               </button>
 
-              <p className="mt-10 text-center text-sm text-gray-500">
+              <p className="mt-5 text-center text-sm text-gray-500">
                 Already a member?
                 <a
                   href="/signin"
                   className="font-semibold leading-6 text-blue-600 hover:text-blue-500 px-3"
                 >
                   Signin
+                </a>
+              </p>
+              <p className="mt-3 text-center text-sm text-gray-500">
+                View Source on
+                <a
+                  href="https://github.com/prmpsmart/MiNo"
+                  className="font-semibold leading-6 text-blue-600 hover:text-blue-500 px-2"
+                >
+                  GitHub - MiNo
                 </a>
               </p>
             </div>

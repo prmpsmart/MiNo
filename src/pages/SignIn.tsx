@@ -131,13 +131,22 @@ const SignIn: React.FC<Props> = ({ setName, setEmail, setAccountId }) => {
             </div>
           </form>
 
-          <p className="mt-10 text-center text-sm text-gray-500">
+          <p className="mt-3 text-center text-sm text-gray-500">
             Not a member?
             <a
               href="/signup"
               className="font-semibold leading-6 text-blue-600 hover:text-blue-500 px-3"
             >
               Create a free account now
+            </a>
+          </p>
+          <p className="mt-3 text-center text-sm text-gray-500">
+            View Source on
+            <a
+              href="https://github.com/prmpsmart/MiNo"
+              className="font-semibold leading-6 text-blue-600 hover:text-blue-500 px-2"
+            >
+              GitHub - MiNo
             </a>
           </p>
         </div>
