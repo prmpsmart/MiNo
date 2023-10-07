@@ -6,22 +6,23 @@ interface IncomesCategory {
   categories: string;
 }
 
+export const categoryStructure = {
+  account_id: {
+    description: "ID of the account having this categories",
+    required: true,
+    type: String,
+  },
+  categories: {
+    description: "categories list joined by <>",
+    type: String,
+    required: true,
+  },
+};
+
 export const IncomesCategoryStructure: Space<IncomesCategory> = {
   space: "IncomesCategories",
   description: "A Record Space for IncomesCategories",
-  structure: {
-    account_id: {
-      description: "ID of the account having this Incomes",
-      required: true,
-      type: String,
-      hashed: true,
-    },
-    categories: {
-      description: "IncomesCategory's categories list joined by <>",
-      type: String,
-      required: true,
-    },
-  },
+  structure: categoryStructure,
 };
 
 export const IncomesCategoryModel = createSchema<IncomesCategory>(

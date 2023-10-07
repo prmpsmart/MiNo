@@ -29,8 +29,8 @@ export async function deleteExpense(id: string) {
   }
 }
 function deleteFromCategory(categories: string, category: string): string {
-  let categoriesList = categories.split(splitter);
-  let categoriesSet = new Set<string>();
+  const categoriesList = categories.split(splitter);
+  const categoriesSet = new Set<string>();
   categoriesList.forEach((cat) => categoriesSet.add(cat));
   categoriesSet.delete(category.toLowerCase());
   return Array.from(categoriesSet).join(splitter);

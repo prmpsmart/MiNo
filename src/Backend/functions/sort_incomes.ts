@@ -1,6 +1,5 @@
 import { ReturnObject } from "nobox-client";
-import { Expense } from "../schemas/expense";
-import { Income, IncomeModel } from "../schemas/income";
+import { Transaction, IncomeModel } from "../schemas/income";
 import { getAccountByIDorEmail } from "./account_management";
 
 export async function getIncomes(email: string = "", account_id: string = "") {
@@ -16,13 +15,13 @@ export async function getIncomes(email: string = "", account_id: string = "") {
 }
 
 export function sortInAscendingOrder(
-  objs: ReturnObject<Income>[] | ReturnObject<Expense>[]
+  objs: ReturnObject<Transaction>[]
 ) {
   return objs.slice().sort((a, b) => a.timestamp - b.timestamp);
 }
 
 export function sortInDescendingOrder(
-  objs: ReturnObject<Income>[] | ReturnObject<Expense>[]
+  objs: ReturnObject<Transaction>[]
 ) {
   return objs.slice().sort((a, b) => b.timestamp - a.timestamp);
 }

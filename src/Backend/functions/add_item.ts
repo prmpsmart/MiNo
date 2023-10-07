@@ -3,16 +3,16 @@ import { ExpensesCategoryModel } from "../schemas/expense_category";
 import { IncomeModel } from "../schemas/income";
 import { IncomesCategoryModel } from "../schemas/income_category";
 import { splitter } from "../utils/constants";
-import { getAccountByIDorEmail } from "./account_management";
+import { Status, getAccountByIDorEmail } from "./account_management";
 
 export async function addIncome(
   account_id: string = "",
   email: string = "",
   name: string,
   category: string,
-  amount: number,
+  amount: string,
   description: string,
-  timestamp: number,
+  timestamp: string,
   id: string = ""
 ) {
   const account = await getAccountByIDorEmail(email, account_id);
@@ -25,14 +25,22 @@ export async function addIncome(
       description: description,
       timestamp: timestamp,
     };
+    let trans;
     if (id.length > 0) {
-      await IncomeModel.updateOneById(id, obj);
+      trans = await IncomeModel.updateOneById(id, obj);
     } else {
-      await IncomeModel.insertOne(obj);
+      trans = await IncomeModel.insertOne(obj);
+    }
+    console.log(trans);
+    if (trans != null) {
+      return new Status("Income added successfully", false);
+    } else {
+      return new Status("Network Error", true);
     }
   } else {
-    console.log(
-      `Account with email: "${email}" or account_id: "${account_id}" doesn't exist`
+    return new Status(
+      `Account with email: "${email}" or account_id: "${account_id}" doesn't exist`,
+      true
     );
   }
 }
@@ -43,7 +51,7 @@ export async function addExpense(
   category: string,
   amount: string,
   description: string,
-  timestamp: number,
+  timestamp: string,
   id: string = ""
 ) {
   const account = await getAccountByIDorEmail(email, account_id);
@@ -61,16 +69,18 @@ export async function addExpense(
     } else {
       await ExpenseModel.insertOne(obj);
     }
+    return new Status("Expense add successfully", false);
   } else {
-    console.log(
-      `Account with email: "${email}" or account_id: "${account_id}" doesn't exist`
+    return new Status(
+      `Account with email: "${email}" or account_id: "${account_id}" doesn't exist`,
+      true
     );
   }
 }
 
 function addToCategory(categories: string, category: string): string {
-  let categoriesList = categories.split(splitter);
-  let categoriesSet = new Set<string>();
+  const categoriesList = categories.split(splitter);
+  const categoriesSet = new Set<string>();
   categoriesList.forEach((cat) => categoriesSet.add(cat));
   categoriesSet.add(category.toLowerCase());
   return Array.from(categoriesSet).join(splitter);

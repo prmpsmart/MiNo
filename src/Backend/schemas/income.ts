@@ -1,55 +1,57 @@
 import { Space } from "nobox-client";
 import { createSchema } from "./config";
 
-export interface Income {
+export interface Transaction {
   account_id: string;
   name: string;
   category: string;
-  amount: number;
+  amount: string;
   description: string;
-  timestamp: number;
+  timestamp: string;
 }
 
-export const IncomeStructure: Space<Income> = {
-  space: "Incomes",
-  description: "A Record Space for Incomes",
-  structure: {
-    account_id: {
-      description: "ID of the account having this income",
-      required: true,
-      type: String,
-      hashed: true,
-    },
-    name: {
-      description: "Income's Name",
-      required: true,
-      type: String,
-      hashed: true,
-    },
-    category: {
-      description: "Category the Income falls into",
-      type: String,
-      required: true,
-    },
-    amount: {
-      description: "Amount of the Income",
-      required: true,
-      type: String,
-      hashed: true,
-    },
-    description: {
-      description: "Further description of the Income",
-      required: true,
-      type: String,
-      hashed: true,
-    },
-    timestamp: {
-      description: "Timestamp of the date-time the Income was made",
-      required: true,
-      type: String,
-      hashed: true,
-    },
+export const structure = {
+  account_id: {
+    description: "ID of the account having this transaction",
+    required: true,
+    type: String,
+    
+  },
+  name: {
+    description: "Transaction's Name",
+    required: true,
+    type: String,
+    
+  },
+  category: {
+    description: "Category the Transaction falls into",
+    type: String,
+    required: true,
+  },
+  amount: {
+    description: "Amount of the Transaction",
+    required: true,
+    type: String,
+    
+  },
+  description: {
+    description: "Further description of the Transaction",
+    required: true,
+    type: String,
+    
+  },
+  timestamp: {
+    description: "Timestamp of the date-time the Transaction was made",
+    required: true,
+    type: String,
+    
   },
 };
 
-export const IncomeModel = createSchema<Income>(IncomeStructure);
+export const IncomeStructure: Space<Transaction> = {
+  space: "Incomes",
+  description: "A Record Space for Incomes",
+  structure: structure,
+};
+
+export const IncomeModel = createSchema<Transaction>(IncomeStructure);

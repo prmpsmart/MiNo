@@ -15,7 +15,6 @@ export const AccountStructure: Space<Account> = {
       description: "Account's Name",
       required: true,
       type: String,
-      hashed: true,
     },
     email: {
       description: "Account's Email",
@@ -26,7 +25,6 @@ export const AccountStructure: Space<Account> = {
       description: "Account's Password",
       required: true,
       type: String,
-      hashed: true,
     },
   },
 };
